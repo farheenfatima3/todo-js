@@ -1,0 +1,70 @@
+
+h1{
+    text-align: center;
+}
+.container{
+    max-width: 600px;
+    height: 500px;
+    background-color: aquamarine;
+    margin: auto;
+  
+}
+.inputBar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+#get-input{
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    border:0;
+    outline-width: 0;
+}
+#add{
+   width:50px;
+   height: 30px;
+    background-color: blue;
+}
+.remove{
+    width:50px;
+   height: 30px;
+    background-color:red;
+}
+
+
+tr:nth-child(even){
+    background-color: aliceblue;
+  
+}
+tr,th{
+    background-color: white;
+    padding: 2rem;
+  
+}
+td{
+    width:500px;
+  
+}
+#btnOne{
+    margin-left: 50px;
+    width:50px;
+height: 30px;
+}
+#btnTwo{
+    margin-left:50px;
+
+    width:50px;
+    height: 30px;
+}
+table{
+    margin-top: 2rem;;
+}
+.mainTop{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: blueviolet;
+}
