@@ -39,9 +39,13 @@ function adding() {
 function show() {
 // here we getItem again from localStorage because in start we are calling this function 
 // so everything remains on screen so as its getting calling initially it do not recognize Array
-let showTask = localStorage.getItem("Task")
-      arr = JSON.parse(showTask)
-
+let task = localStorage.getItem("Task")
+if (task == null) {
+    arr = []
+}
+ else {
+      arr = JSON.parse(task)
+ }
     let showingItems = ''
     let addedTask = document.getElementById("addedTaskList")
     // on first index+1 because we are displaying index of array which starts from 0 
