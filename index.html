@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Todo List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -14,27 +15,29 @@
     <div class="container">
         <div class="mainTop">
             <h1>Todo App</h1>
-        <div>
+        <div class="searchContainer">
             <label for="search">Search</label>
-            <input id="search" type="search">
+            <input placeholder="Enter here to search" id="search" type="search">
+            <i class="fa fa-search"></i>
         </div>
         </div>
 
 
         <div class="inputBar">
             <label for="get-input"></label>
-            <input id="get-input" type="text">
+            <input placeholder="Enter here..." id="get-input" type="text">
             <input type="hidden" id="saveIndex">
             <button id="add">Add</button>
-            <button id="save" style="display:none">Save</button>
+            <button id="save">Save</button>
             <button id="remove">Delete</button>
         </div>
         <table id="addedTaskList">
            
-            <tr class=tableTag>
+            <tr>
                 <th>1</th>
                 <td>data</td>
-                <td><button id="btnOne">Edit</button></td>
+                <td><button id="btnOne">Edit</button></i></td>
+                
                 <td><button id="btnTwo">Delete</button></td>
             </tr>
            

@@ -16,6 +16,7 @@ function adding() {
        
         //   first we do getItem because we want to check if the array is present or not
     //   in local storage
+    // Note:key name must start with capital letter 
     let task = localStorage.getItem("Task")
     //    when localStorage is empty no array is present so in order to add items in array we need 
     //    to create an array(1st attempt to add data in localStorage)
@@ -48,8 +49,8 @@ let showTask = localStorage.getItem("Task")
         showingItems += `<tr>
         <th>${index+1}</th>
         <td>${item}</td>
-        <td><button id="btnOne" onClick=editShow(${index})>Edit</button></td>
-        <td><button id="btnTwo" onClick=deleteItem(${index})>Delete</button></td>
+        <td><i class="fa fa-pencil"><button id="btnOne" onClick=editShow(${index})>Edit</button></i></td>
+        <td><i class="fa fa-trash"><button id="btnTwo" onClick=deleteItem(${index})>Delete</button></i></td>
     </tr>`
     })
     addedTask.innerHTML=showingItems
@@ -63,7 +64,8 @@ function editShow(index){
     // passing index which we stored in hidden input tag
     inputByUser.value=arr[index]
     saveBtn.style.display="block";
-    addTask.style.display="none"
+    addTask.style.display="none";
+
     
 }
 let saveBtn=document.getElementById("save")
@@ -92,17 +94,9 @@ function deleteItem(index){
 
 delBtn.addEventListener("click",deleteAll)
 function deleteAll(){
-    let task = localStorage.getItem("Task")
-    //   arr = JSON.parse(task)
-    if (task == null) {
-        arr = []
-    }
-     else {
-        
-       
-        arr=[]
-    }
-    localStorage.setItem("Task", JSON.stringify(arr))
+arr=[]
+
+localStorage.setItem("Task",JSON.stringify(arr))
     saveBtn.style.display="none";
     addTask.style.display="block"
     inputByUser.value=""
@@ -122,11 +116,12 @@ Array.from(trList).forEach(function(item){
    
       let reg=new RegExp(searchText,"gi")
     if(text.match(reg)){
-      console.log(text.match(reg))
+      
         item.style.display="table-row"
     }else{
-        item.style.display="none"
+        item.style.display="none";
     }
+
 })
 }
 
