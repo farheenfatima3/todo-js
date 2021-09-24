@@ -85,8 +85,10 @@ function savingInLocal(){
 }
 
 function deleteItem(index){
+    // get items from localStorage using object named Task
     let showTask = localStorage.getItem("Task")
     arr = JSON.parse(showTask)
+    // splice have 3 atributes 1st from which index to remove item of array 2nd how many items be removed
     arr.splice(index,1)
     localStorage.setItem("Task", JSON.stringify(arr))
     show()
@@ -108,20 +110,20 @@ searchInp.addEventListener("input",searchShow)
 function searchShow(){
     
 Array.from(trList).forEach(function(item){
-    // at 0th index of table of td we have data getting stored with help of item 
-    // td[0].innerText is all items getting stored
+    // at 0th index of table of td we have data of table
     let text=item.getElementsByTagName("td")[0].innerText;
    
     let searchText=searchInp.value
-   
+//    creating constructor function for input from user with global and insensivity flag
       let reg=new RegExp(searchText,"gi")
     if(text.match(reg)){
-      
+    //    block will also show the matched data but table appearance will be disturbed so instead of block use table-row
         item.style.display="table-row"
     }else{
         item.style.display="none";
     }
 
 })
+
 }
 
